@@ -36,11 +36,11 @@ The application will start, and you can access it at http://localhost:8080.
 
 The application exposes several RESTful API endpoints for managing modules:
 
-* **GET /api/modules**: Retrieve a list of all modules.
-* **GET /api/modules/{id}**: Retrieve a specific module by its ID.
-* **POST /api/modules**: Create a new module.
-* **PUT /api/modules/{id}**: Update an existing module.
-* **DELETE /api/modules/{id}**: Delete a module by its ID.
+**GET /api/modules**: Retrieve a list of all modules.
+**GET /api/modules/{id}**: Retrieve a specific module by its ID.
+**POST /api/modules**: Create a new module.
+**PUT /api/modules/{id}**: Update an existing module.
+**DELETE /api/modules/{id}**: Delete a module by its ID.
 ```
 
 ## Dependencies
