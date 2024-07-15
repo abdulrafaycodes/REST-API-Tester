@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Tester</title>
+    <script>
+        function sendRequest() {
+            var method = document.getElementById("method").value;
+            var url = document.getElementById("url").value;
+            var body = document.getElementById("body").value;
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open(method, url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    document.getElementById("response").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send(body);
+        }
+    </script>
+    <style>
+        p,h1,h2,h3,h4,h5,h6 {
+            font-family: 'tahoma', sans-serif;
+            color: #01213F;
+            }
+        body {
+            font-family: 'tahoma', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            }
+
+            .container {
+            background-color: #ffffff;
+            border: 2px solid #cccccc;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            }
+
+            h1 {
+            text-align: center;
+            }
+
+            label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555555;
+            }
+
+            input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            }
+
+            button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            }
+
+            button:hover {
+            background-color: #45a049;
+            }
+
+            pre {
+            background-color: #f8f8f8;
+            padding: 90px;
+            border-radius: 5px;
+            border: 1px solid #dddddd;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h1>API Tester</h1>
+        <div>
+            <label for="method">HTTP method:</label>
+            <select id="method">
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
+                <option value="PUT">PUT</option>
+                <option value="DELETE">DELETE</option>
+            </select>
+        </div>
+        <div>
+            <label for="url">URI:</label>
+            <input type="text" id="url" />
+        </div>
+        <div>
+            <label for="body">JSON request body:</label>
+            <textarea id="body" rows="4" cols="50"></textarea>
+        </div>
+        <div>
+            <button onclick="sendRequest()">Send</button>
+        </div>
+        <div>
+            <h2>Response</h2>
+            <pre id="response"></pre>
+        </div>
+    </div>
+</body>
+</html>
