@@ -31,17 +31,16 @@ mvn spring-boot:run
 ```
 The application will start, and you can access it at http://localhost:8080.
 
-```markdown
 ## API Endpoints
 
 The application exposes several RESTful API endpoints for managing modules:
 
-**GET /api/modules**: Retrieve a list of all modules.
-**GET /api/modules/{id}**: Retrieve a specific module by its ID.
-**POST /api/modules**: Create a new module.
-**PUT /api/modules/{id}**: Update an existing module.
-**DELETE /api/modules/{id}**: Delete a module by its ID.
-```
+* **GET /api/modules**: Retrieve a list of all modules.
+* **GET /api/modules/{id}**: Retrieve a specific module by its ID.
+* **POST /api/modules**: Create a new module.
+* **PUT /api/modules/{id}**: Update an existing module.
+* **DELETE /api/modules/{id}**: Delete a module by its ID.
+
 
 ## Dependencies
 
@@ -56,24 +55,3 @@ The project uses the following dependencies:
 ## Project Structure
 
 The project structure follows standard Maven conventions:
-
-myproject
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── developer
-│   │   │           └── myproject
-│   │   │               ├── controller
-│   │   │               │   └── ModuleController.java
-│   │   │               ├── exception
-│   │   │               │   └── ResourceNotFoundException.java
-│   │   │               ├── model
-│   │   │               │   └── Module.java
-│   │   │               └── repository
-│   │   │                   └── ModuleRepository.java
-│   └── resources
-│       ├── application.properties
-│       └── static
-│           └── api-tester.html
-└── pom.xml
